@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+bool ehPrimo(int n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n % 2 == 0 || n % 3 == 0) return false;
+    for (int i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int A, B;
+
+    scanf("%d %d", &A, &B);
+
+    if (A < 1 || B < 1 || A > 9999 || B > 9999) {
+        printf("Os números devem ser positivos e menores que 10000.\n");
+        return 1;
+    }
+    if (A > B) {
+        printf("O primeiro número deve ser menor ou igual ao segundo.\n");
+        return 1;
+    }
+
+    for (int i = A; i <= B; i++) {
+        if (ehPrimo(i)) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}

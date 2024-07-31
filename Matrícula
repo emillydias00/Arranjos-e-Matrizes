@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int nAEDS1, nCalculo1, i, j, count = 0;
+
+    scanf("%d", &nAEDS1);
+    int matriculasAEDS1[nAEDS1];
+    for (i = 0; i < nAEDS1; i++) {
+        scanf("%d", &matriculasAEDS1[i]);
+    }
+
+    scanf("%d", &nCalculo1);
+    int matriculasCalculo1[nCalculo1];
+    for (i = 0; i < nCalculo1; i++) {
+        scanf("%d", &matriculasCalculo1[i]);
+    }
+
+
+    for (i = 0; i < nAEDS1; i++) {
+        for (j = 0; j < nCalculo1; j++) {
+            if (matriculasAEDS1[i] == matriculasCalculo1[j]) {
+                printf("%d\n", matriculasAEDS1[i]);
+                count++;
+            }
+        }
+    }
+
+    if (count == 0) {
+        printf("Não há alunos matriculados em ambas as disciplinas.\n");
+    }
+
+    return 0;
+}

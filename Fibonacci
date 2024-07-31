@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long int fib[800];
+
+    fib[0] = 0;
+    fib[1] = 1;
+
+    for (int i = 2; i < 800; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    do {
+        scanf("%d", &n);
+
+        if (n >= 0 && n < 800) {
+            printf("%lld\n", fib[n]);
+        }
+
+    } while (n >= 0);
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    const int n = 10;  
+    int X[n];          
+    int Y[n];          
+    int i;
+
+ 
+    for (i = 0; i < n; i++) {
+        scanf("%d", &X[i]);
+    }
+
+    for (i = 0; i < n; i++) {
+        Y[i] = X[n - 1 - i];
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("%d\n", Y[i]);
+    }
+
+    return 0;
+}
